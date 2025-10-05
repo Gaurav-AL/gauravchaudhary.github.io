@@ -858,21 +858,39 @@ thereby significantly elevating user experience.</p>
     // Bettle animation
     const beetle = document.getElementById("beetle");
 
+    let x = 100, y = 100;
+    let angle = Math.random() * 360; // beetle’s direction
+    const speed = 1.5; // movement speed
+    
     function moveBeetle() {
-      const screenW = window.innerWidth - 50;
-      const screenH = window.innerHeight - 50;
+      // move in current direction
+      x += Math.cos(angle * Math.PI / 180) * speed;
+      y += Math.sin(angle * Math.PI / 180) * speed;
     
-      const randomX = Math.floor(Math.random() * screenW);
-      const randomY = Math.floor(Math.random() * screenH);
+      // bounce off window edges
+      if (x < 0 || x > window.innerWidth - 50) {
+        angle = 180 - angle;
+      }
+      if (y < 0 || y > window.innerHeight - 50) {
+        angle = -angle;
+      }
     
-      beetle.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      // apply position + rotation
+      beetle.style.left = `${x}px`;
+      beetle.style.top = `${y}px`;
+      beetle.style.transform = `rotate(${angle}deg)`;
+    
+      // randomly wiggle direction a bit
+      if (Math.random() < 0.02) {
+        angle += (Math.random() - 0.5) * 60; // slight turn
+      }
+    
+      requestAnimationFrame(moveBeetle);
     }
     
-    // Move every 2 seconds
-    setInterval(moveBeetle, 2000);
-    
-    // Initial move
+    // start moving
     moveBeetle();
+
 
     </script>
 </body>
