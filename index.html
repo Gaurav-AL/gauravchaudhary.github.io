@@ -186,7 +186,15 @@
             gap: 40px;
             align-items: center;
         }
-        
+        .beetle {
+          position: fixed;
+          width: 60px;              /* change as needed */
+          height: 60px;             /* change as needed */
+          pointer-events: none;     /* so it doesn't block clicks */
+          z-index: 9999;
+          transform-origin: center center;
+          will-change: transform;   /* hint to browser */
+        }
         .about-text {
             flex: 2;
             min-width: 300px;
@@ -467,10 +475,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 </head>
 <body>
-    <img src="bettle_green.png" id="beetle1" alt="beetle">
-    <img src="bettle_green.png" id="beetle2" alt="beetle">
-    <img src="bettle_green.png" id="beetle3" alt="beetle">
-    <img src="bettle_green.png" id="beetle4" alt="beetle">
+    <img src="bettle_green.png" class="beetle" id="beetle1" alt="beetle">
+    <img src="bettle_green.png" class="beetle" id="beetle2" alt="beetle">
+    <img src="bettle_green.png" class="beetle" id="beetle3" alt="beetle">
+    <img src="bettle_green.png" class="beetle" id="beetle4" alt="beetle">
     <header id="home">
         <div class="header-bg"></div>
         <div class="container">
