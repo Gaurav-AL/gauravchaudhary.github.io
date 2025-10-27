@@ -472,104 +472,62 @@
         font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       }
     
-      /* profile picture */
-      .profile img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 999px;           /* circular */
-        box-shadow: 0 10px 25px rgba(8, 15, 30, 0.18);
-        display: block;
-        border: 4px solid white;        /* white ring */
-      }
-    
-      /* floating bubble / tag */
-      .profile .open-bubble {
-        --size: 46px;
-        position: absolute;
-        right: -6px;                    /* near top-right */
-        top: -8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: var(--size);
-        height: var(--size);
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #7c3aed 100%);
-        color: white;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 1;
-        box-shadow: 0 6px 18px rgba(124, 58, 237, 0.25);
-        transform-origin: center;
-        transform: translateZ(0);
-        z-index: 3;
-        cursor: default;
-        white-space: nowrap;
-      }
-    
-      /* optional little cloud icon inside bubble */
-      .profile .open-bubble .dot {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-    
-      .profile .open-bubble .dot svg {
-        width: 14px;
-        height: 14px;
-        flex-shrink: 0;
-        filter: drop-shadow(0 2px 6px rgba(0,0,0,0.06));
-      }
-    
-      /* pulsing halo to draw attention (subtle) */
-      .profile .halo {
-        position: absolute;
-        right: -12px;
-        top: -16px;
-        width: 72px;
-        height: 72px;
-        border-radius: 999px;
-        background: radial-gradient(circle at 30% 30%, rgba(14,165,233,0.12), rgba(124,58,237,0.06) 40%, rgba(0,0,0,0) 60%);
-        z-index: 1;
-        animation: pulse 2200ms infinite;
-        pointer-events: none;
-      }
-    
-      @keyframes pulse {
-        0% { transform: scale(0.92); opacity: 0.9; }
-        50% { transform: scale(1.06); opacity: 0.6; }
-        100% { transform: scale(0.92); opacity: 0.9; }
-      }
-    
-      /* accessible focus state (if bubble is interactive) */
-      .profile .open-bubble:focus {
-        outline: 3px solid rgba(124,58,237,0.25);
-        outline-offset: 3px;
-      }
-    
-      /* small-screen adjustments */
-      @media (max-width: 420px) {
-        .profile { width: 110px; height: 110px; }
-        .profile .open-bubble { --size: 40px; font-size: 11px; padding: 6px 8px; right: -4px; top: -6px; }
-        .profile .halo { right: -10px; top: -12px; width: 60px; height: 60px; }
-      }
-    
-      /* optional ribbon variant (if you prefer left-aligned ribbon) */
-      .profile.ribbon .ribbon-tag {
-        position: absolute;
-        left: -8px;
-        bottom: -8px;
-        background: linear-gradient(90deg,#06b6d4,#10b981);
-        color: white;
-        padding: 6px 10px;
-        border-radius: 12px;
-        font-weight: 600;
-        font-size: 12px;
-        box-shadow: 0 8px 20px rgba(6,95,70,0.08);
-        z-index: 3;
-      }
+      .header-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+        }
+        
+        .profile {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .profile img {
+          width: 130px;
+          height: 130px;
+          border-radius: 50%;
+          border: 3px solid #00c853; /* green ring */
+          box-shadow: 0 0 25px rgba(0, 200, 83, 0.5);
+        }
+        
+        /* Glowing animated halo */
+        .halo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          background: radial-gradient(circle, rgba(0, 200, 83, 0.3) 0%, transparent 70%);
+          animation: pulse 2.5s infinite ease-in-out;
+          z-index: -1;
+        }
+        
+        @keyframes pulse {
+          0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+          50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.4; }
+          100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+        }
+        
+        /* Floating Ribbon */
+        .ribbon-tag {
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: linear-gradient(90deg, #00c853, #00e676);
+          color: white;
+          font-size: 0.85rem;
+          font-weight: 600;
+          padding: 5px 15px;
+          border-radius: 25px;
+          box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+          letter-spacing: 0.5px;
+        }
+
     </style>
     <link rel="icon" type="image/png" class = "logo" href="GauravImage.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
@@ -587,15 +545,15 @@
         <div class="header-bg"></div>
         <div class="container">
             <div class="header-content">
-                <!-- Profile Picture Changes accordin to requirement -->
-                <div class="profile" aria-label="Gaurav Chaudhary — open to work">
-                  <img src="GauravImage.png" alt="Gaurav Chaudhary — profile picture">
-                
-                  <!-- halo (visual only) -->
-                  <span class="halo" aria-hidden="true"></span
-                   <!-- ribbon alternative example (uncomment to use)  -->
-                   <!-- <div class="ribbon-tag">Exploring opportunities</div>  -->
-                    </div>
+              <div class="profile" aria-label="Gaurav Chaudhary — open to work">
+                <img src="GauravImage.png" alt="Gaurav Chaudhary — profile picture">
+            
+                <!-- glowing halo -->
+                <span class="halo" aria-hidden="true"></span>
+            
+                <!-- optional ribbon -->
+                <div class="ribbon-tag">Open to Work</div>
+              </div>
             </div>
             <div class="bio">
                     <h1 style="font-color: black">Gaurav Chaudhary</h1>
