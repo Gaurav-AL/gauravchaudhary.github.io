@@ -462,6 +462,114 @@
                 left: 0;
             }
         }
+        /* Profile related Styling */ 
+        .profile {
+        position: relative;
+        display: inline-block;
+        width: 140px;
+        height: 140px;
+        margin: 12px;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      }
+    
+      /* profile picture */
+      .profile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 999px;           /* circular */
+        box-shadow: 0 10px 25px rgba(8, 15, 30, 0.18);
+        display: block;
+        border: 4px solid white;        /* white ring */
+      }
+    
+      /* floating bubble / tag */
+      .profile .open-bubble {
+        --size: 46px;
+        position: absolute;
+        right: -6px;                    /* near top-right */
+        top: -8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: var(--size);
+        height: var(--size);
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #0ea5e9 0%, #7c3aed 100%);
+        color: white;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1;
+        box-shadow: 0 6px 18px rgba(124, 58, 237, 0.25);
+        transform-origin: center;
+        transform: translateZ(0);
+        z-index: 3;
+        cursor: default;
+        white-space: nowrap;
+      }
+    
+      /* optional little cloud icon inside bubble */
+      .profile .open-bubble .dot {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+    
+      .profile .open-bubble .dot svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        filter: drop-shadow(0 2px 6px rgba(0,0,0,0.06));
+      }
+    
+      /* pulsing halo to draw attention (subtle) */
+      .profile .halo {
+        position: absolute;
+        right: -12px;
+        top: -16px;
+        width: 72px;
+        height: 72px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 30%, rgba(14,165,233,0.12), rgba(124,58,237,0.06) 40%, rgba(0,0,0,0) 60%);
+        z-index: 1;
+        animation: pulse 2200ms infinite;
+        pointer-events: none;
+      }
+    
+      @keyframes pulse {
+        0% { transform: scale(0.92); opacity: 0.9; }
+        50% { transform: scale(1.06); opacity: 0.6; }
+        100% { transform: scale(0.92); opacity: 0.9; }
+      }
+    
+      /* accessible focus state (if bubble is interactive) */
+      .profile .open-bubble:focus {
+        outline: 3px solid rgba(124,58,237,0.25);
+        outline-offset: 3px;
+      }
+    
+      /* small-screen adjustments */
+      @media (max-width: 420px) {
+        .profile { width: 110px; height: 110px; }
+        .profile .open-bubble { --size: 40px; font-size: 11px; padding: 6px 8px; right: -4px; top: -6px; }
+        .profile .halo { right: -10px; top: -12px; width: 60px; height: 60px; }
+      }
+    
+      /* optional ribbon variant (if you prefer left-aligned ribbon) */
+      .profile.ribbon .ribbon-tag {
+        position: absolute;
+        left: -8px;
+        bottom: -8px;
+        background: linear-gradient(90deg,#06b6d4,#10b981);
+        color: white;
+        padding: 6px 10px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 12px;
+        box-shadow: 0 8px 20px rgba(6,95,70,0.08);
+        z-index: 3;
+      }
     </style>
     <link rel="icon" type="image/png" class = "logo" href="GauravImage.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
@@ -479,8 +587,29 @@
         <div class="header-bg"></div>
         <div class="container">
             <div class="header-content">
-                <div class="profile">
-                    <img src="GauravImage.png" alt="Profile Picture">
+                <!-- Profile Picture Changes accordin to requirement -->
+                <div class="profile" aria-label="Gaurav Chaudhary — open to work">
+                  <img src="GauravImage.png" alt="Gaurav Chaudhary — profile picture">
+                
+                  <!-- halo (visual only) -->
+                  <span class="halo" aria-hidden="true"></span>
+                
+                  <!-- bubble tag: replace text if you want -->
+                  <div class="open-bubble" role="note" aria-hidden="false" tabindex="0" title="Open to work — Exploring opportunities">
+                    <span class="dot">
+                      <!-- small briefcase icon (SVG) -->
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M9 3h6a1 1 0 0 1 1 1v2h-8V4a1 1 0 0 1 1-1z" fill="white" opacity="0.98"/>
+                        <path d="M4 8h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z" fill="white" opacity="0.9"/>
+                      </svg>
+                
+                      <!-- text label -->
+                      <span>Open to work</span>
+                    </span>
+                  </div>
+                
+                   <!-- ribbon alternative example (uncomment to use)  -->
+                   <div class="ribbon-tag">Exploring opportunities</div> 
                 </div>
                 <div class="bio">
                     <h1 style="font-color: black">Gaurav Chaudhary</h1>
