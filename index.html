@@ -760,8 +760,44 @@
                         <div class="timeline-date">April 2025 - Oct 2025</div>
                         <h3 class="timeline-title">SDE - 1</h3>
                         <h4>Razorpay</h4>
-                        <p class="timeline-desc">• Single Handledly Intergated E2E test cases into github action for CDP service.</p>
-                        <p class="timeline-desc">• Integrated Tracing into CDP service and worked on Infra projects like Canary Deployment and Decomposition tasks.</p>
+                        <section class="timeline-desc" aria-label="Project summary: Rate limiting & platform improvements">
+                          <h3>Platform & Reliability Improvements — Rate Limiting / CDP / API Proxy</h3>
+                        
+                          <ul>
+                            <li>
+                              <strong>Owned and improved a rate-limiting service</strong> handling <strong>50M+ daily requests</strong>;
+                              integrated Coralogix tracing to enable <strong>30% faster root-cause detection</strong> and added
+                              a <em>canary rollout</em> process for safer deployments.
+                            </li>
+                        
+                            <li>
+                              <strong>Decomposed the API monolith</strong> into a proxy layer to simplify workflows and reduce latency.
+                            </li>
+                        
+                            <li>
+                              <strong>Developed an end-to-end test suite</strong> integrated with GitHub Actions to ensure robust CI/CD coverage.
+                            </li>
+                        
+                            <li>
+                              <strong>Authored and exposed a customer-listing SDK</strong> for the CDP service and assisted with integration.
+                            </li>
+                        
+                            <li>
+                              <strong>Tuned MySQL connection pooling</strong>, reducing 95th-percentile API latency from <strong>250ms → 90ms</strong>
+                              under <strong>50k RPS</strong>.
+                            </li>
+                          </ul>
+                        
+                          <p><strong>Tech stack:</strong>
+                            <span class="tech">Go</span>,
+                            <span class="tech">Gorm</span>,
+                            <span class="tech">gRPC</span>,
+                            <span class="tech">Kubernetes</span>,
+                            <span class="tech">Kafka</span>,
+                            <span class="tech">Redis</span>,
+                            <span class="tech">MySQL</span>
+                          </p>
+                        </section>
                     </div>
                 </div>
                 <div class="timeline-item left">
