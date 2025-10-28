@@ -464,13 +464,13 @@
         }
         /* Profile related Styling */ 
         .profile {
-        position: relative;
-        display: inline-block;
-        width: 140px;
-        height: 140px;
-        margin: 12px;
-        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      }
+            position: relative;
+            display: inline-block;
+            width: 140px;
+            height: 140px;
+            margin: 12px;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+          }
     
       .header-content {
           display: flex;
@@ -555,6 +555,15 @@
           user-select: none;
           -webkit-tap-highlight-color: transparent;
         }
+
+        /* specific ribbons positions */
+        .ribbon-availability {
+          bottom: -6px; /* sits right below image */
+        }
+        
+        .ribbon-download {
+          bottom: -32px; /* spaced further below availability tag */
+        }
         
         /* Click / active state (red) */
         .ribbon-tag.active {
@@ -579,7 +588,29 @@
         @media (max-width: 420px) {
           .ribbon-tag { font-size: 0.64rem; padding: 3px 7px; }
         }
-
+        /* active click color for download button */
+        .ribbon-download.active {
+          background: linear-gradient(90deg, #e53935, #ef5350);
+          box-shadow: 0 4px 12px rgba(229, 57, 53, 0.22);
+          transform: translateX(-50%) scale(0.98);
+        }
+        
+        /* hover effect */
+        .ribbon-tag:hover {
+          transform: translateX(-50%) translateY(-1px);
+          box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+        }
+        
+        /* smaller screens */
+        @media (max-width: 420px) {
+          .ribbon-tag {
+            font-size: 0.64rem;
+            padding: 3px 7px;
+          }
+          .ribbon-download {
+            bottom: -28px;
+          }
+        }
     </style>
     <link rel="icon" type="image/png" class = "logo" href="GauravImage.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
@@ -605,10 +636,10 @@
                 <span class="halo" aria-hidden="true"></span>
         
                 <!-- optional ribbon -->
-                <div class="ribbon-tag">Immediate Joiner</div>
+                <div class="ribbon-tag ribbon-availability">Immediate Joiner</div>
 
-                <a id="resumeBtn" class="ribbon-tag" href="resume.pdf" download aria-label="Download resume">
-                  Download CV
+                <a id="resumeBtn" class="ribbon-tag ribbon-download" href="resume.pdf" download aria-label="Download resume">
+                Download CV
                 </a>
               </div>
               <!-- RIGHT: Bio Section -->
