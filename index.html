@@ -529,7 +529,56 @@
           white-space: nowrap;
           backdrop-filter: blur(3px); /* subtle glassy feel */
         }
-
+        /* Download CV Styling */
+        .ribbon-tag {
+          position: absolute;
+          bottom: -6px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        
+          /* Subtle, small bubble */
+          background: linear-gradient(90deg, #4caf50, #66bb6a);
+          color: #fff;
+          font-size: 0.68rem;
+          font-weight: 600;
+          padding: 4px 8px;
+          border-radius: 999px;        /* pill / bubble */
+          box-shadow: 0 2px 6px rgba(76, 175, 80, 0.18);
+          letter-spacing: 0.2px;
+          white-space: nowrap;
+          text-decoration: none;
+          transition: transform 180ms ease, box-shadow 180ms ease, background 220ms ease;
+          cursor: pointer;
+          user-select: none;
+          -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Click / active state (red) */
+        .ribbon-tag.active {
+          background: linear-gradient(90deg, #e53935, #ef5350);
+          box-shadow: 0 6px 18px rgba(229, 57, 53, 0.22);
+          transform: translateX(-50%) scale(0.98); /* tiny press effect */
+        }
+        
+        /* Focus states for keyboard accessibility */
+        .ribbon-tag:focus {
+          outline: 3px solid rgba(76, 175, 80, 0.18);
+          outline-offset: 4px;
+        }
+        
+        /* Hover (subtle lift) */
+        .ribbon-tag:hover {
+          transform: translateX(-50%) translateY(-1px);
+          box-shadow: 0 4px 12px rgba(76, 175, 80, 0.20);
+        }
+        
+        /* Small-screen tweak */
+        @media (max-width: 420px) {
+          .ribbon-tag { font-size: 0.64rem; padding: 3px 7px; }
+        }
 
     </style>
     <link rel="icon" type="image/png" class = "logo" href="GauravImage.png">
@@ -558,7 +607,9 @@
                 <!-- optional ribbon -->
                 <div class="ribbon-tag">Immediate Joiner</div>
               </div>
-        
+              <a id="resumeBtn" class="ribbon-tag" href="/resume.pdf" download aria-label="Download resume">
+              Download CV
+              </a>
               <!-- RIGHT: Bio Section -->
               <div class="bio">
                 <h1 style="color: black;">Gaurav Chaudhary</h1>
@@ -1181,6 +1232,47 @@ thereby significantly elevating user experience.</p>
     // startBeetleMovement('beetle7', { speed: 1.0 });
     // startBeetleMovement('beetle8', { speed: 1.0 });
   });
+        // Download CV Script
+        (function () {
+      const btn = document.getElementById('resumeBtn');
+    
+      if (!btn) return;
+    
+      // helper to trigger the download even if same href was already clicked
+      function triggerDownload(href, filename) {
+        // If href is external or same-origin file, use anchor click
+        const a = document.createElement('a');
+        a.href = href;
+        if (filename) a.download = filename;
+        // For cross-origin, browsers may ignore download attribute; it will still navigate.
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+    
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+    
+        // toggle to red (active)
+        btn.classList.add('active');
+    
+        // trigger download (use href and optional download attr)
+        const href = btn.getAttribute('href') || '';
+        const filename = btn.getAttribute('download') || 'resume.pdf';
+        if (href) triggerDownload(href, filename);
+    
+        // revert to green after a short time so it doesn't feel "stuck"
+        setTimeout(() => btn.classList.remove('active'), 700);
+      });
+    
+      // keyboard accessibility: allow Enter/Space to activate
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    })();
     </script>
 </body>
 </html>
