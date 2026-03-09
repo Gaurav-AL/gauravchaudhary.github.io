@@ -27,6 +27,7 @@ Our app includes a Kids Zone section designed for children aged 3–7. We do not
 ### 7. Data Security
 
 All quiz progress data is stored locally on your device and is never transmitted to our servers.
+We collect payment information processed securely by Razorpay. We do not store card or UPI details.
 
 ### 8. Changes to This Policy
 
