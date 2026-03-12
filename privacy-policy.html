@@ -1,96 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Quix</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #333;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-      background: #fff;
-    }
-    h1 { font-size: 28px; margin-bottom: 4px; }
-    h2 { font-size: 18px; margin-top: 36px; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 6px; }
-    p  { margin: 10px 0; color: #444; }
-    ul { margin: 10px 0 10px 24px; color: #444; }
-    li { margin-bottom: 6px; }
-    a  { color: #6c63ff; }
-    .meta { color: #888; font-size: 14px; margin-bottom: 32px; }
-    hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Quix</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+font-size:16px;
+line-height:1.7;
+color:#333;
+max-width:760px;
+margin:0 auto;
+padding:40px 24px 80px;
+background:#fff;
+}
+
+h1{font-size:28px;margin-bottom:4px;}
+
+h2{
+font-size:18px;
+margin-top:36px;
+margin-bottom:8px;
+border-bottom:1px solid #eee;
+padding-bottom:6px;
+}
+
+p{margin:10px 0;color:#444;}
+
+ul{margin:10px 0 10px 24px;color:#444;}
+
+li{margin-bottom:6px;}
+
+a{color:#6c63ff;}
+
+.meta{
+color:#888;
+font-size:14px;
+margin-bottom:32px;
+}
+
+hr{
+border:none;
+border-top:1px solid #eee;
+margin:40px 0;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">Last updated: March 2026 &nbsp;·&nbsp; App: Quix &nbsp;·&nbsp; Developer: Quix App</p>
+<h1>Privacy Policy</h1>
+<p class="meta">Last updated: March 2026 · App: Quix</p>
 
-  <p>This Privacy Policy explains how Quix ("we", "our", "the app") collects, uses, and protects your information when you use our application. By using Quix, you agree to this policy.</p>
+<p>This Privacy Policy explains how Quix ("we", "our", or "the app") collects, uses, and protects information when you use the application. By using Quix, you agree to the practices described in this policy.</p>
 
-  <h2>1. Information We Collect</h2>
-  <p>Quix does not require you to create an account or provide any personal details. We collect only what is necessary to run the service:</p>
-  <ul>
-    <li><strong>Anonymous Device ID:</strong> A random ID assigned by Firebase Anonymous Authentication. Not linked to your name, email, or phone number.</li>
-    <li><strong>Nickname:</strong> The name you choose for multiplayer sessions. Temporary and not stored permanently.</li>
-    <li><strong>Usage counters:</strong> Number of free and Pro AI quiz generations used, stored under your anonymous ID.</li>
-    <li><strong>Subscription status:</strong> Whether you have an active Pro subscription and its expiry date.</li>
-    <li><strong>Device information:</strong> Basic device data collected by Google AdMob for ad serving.</li>
-    <li><strong>Crash reports:</strong> Anonymous crash logs via Firebase to help us fix bugs.</li>
-  </ul>
+<h2>1. Information We Collect</h2>
 
-  <h2>2. AI Quiz Generation</h2>
-  <p>When you upload a document (PDF, TXT, DOC, DOCX), the text content is sent to the Anthropic Claude API to generate quiz questions. We do not store your document content on our servers. Generated quiz packs are saved locally on your device only.</p>
-  <p><strong>Important:</strong> Do not upload documents containing passwords, financial details, medical records, or any sensitive personal information. Only upload study material and educational content.</p>
+<p>Quix is designed to work without requiring personal account registration. We collect only limited information necessary for the operation of the app.</p>
 
-  <h2>3. Payments and Subscriptions</h2>
-  <p>Quix offers a free tier (2 lifetime AI generations), pay-per-generation (₹19 per generation), and a Pro subscription (₹99/month including 10 generations). All payments are processed by Razorpay. We do not store your card number, UPI ID, or any payment credentials.</p>
-  <p>We store only your subscription status and expiry date in Firebase under your anonymous ID. Payment transaction IDs are stored for verification purposes only.</p>
+<ul>
+<li><strong>Anonymous Identifier:</strong> A randomly generated identifier assigned to your device that allows the app to function properly. This identifier is not linked to your name, email, or phone number.</li>
 
-  <h2>4. Multiplayer</h2>
-  <p>When you create or join a multiplayer room, the following data is temporarily stored in Firebase Realtime Database:</p>
-  <ul>
-    <li>Room code</li>
-    <li>Nickname chosen for the session</li>
-    <li>Your answers and score during the game</li>
-    <li>Online/offline status during the session</li>
-  </ul>
-  <p>All multiplayer room data is automatically deleted from Firebase within 2–6 hours after the session ends.</p>
+<li><strong>Nickname:</strong> A display name you choose for multiplayer sessions. This is used only during gameplay.</li>
 
-  <h2>5. Third-Party Services</h2>
-  <p>Quix uses the following third-party services, each governed by their own privacy policies:</p>
-  <ul>
-    <li><strong>Firebase (Google)</strong> — Anonymous authentication, Realtime Database, Remote Config</li>
-    <li><strong>Anthropic Claude API</strong> — AI quiz generation from uploaded documents</li>
-    <li><strong>Razorpay</strong> — Payment processing</li>
-    <li><strong>Google AdMob</strong> — In-app advertising</li>
-    <li><strong>Google Play Services</strong> — App distribution</li>
-  </ul>
+<li><strong>Usage Data:</strong> Limited usage information such as feature usage counters or subscription status required to provide the service.</li>
 
-  <h2>6. Data Storage and Security</h2>
-  <p>Quiz packs are stored locally on your device. Subscription and usage data is stored in Firebase Realtime Database (Google Cloud) under your anonymous ID, protected by Firebase security rules.</p>
-  <p><strong>Retention:</strong> Multiplayer data deleted within 6 hours. Payment records retained for 90 days. Anonymous user records retained as long as your device ID is active.</p>
+<li><strong>Device Information:</strong> Basic device-related data such as device type, operating system version, and app performance information.</li>
 
-  <h2>7. Your Rights</h2>
-  <p>You have the right to access, correct, or request deletion of your data. Uninstalling the app removes all locally stored data. To request deletion of your Firebase records, contact us at the email below.</p>
-  <p>To opt out of personalised ads: Android Settings → Google → Ads → Opt out of Ads Personalisation.</p>
+<li><strong>Crash Reports:</strong> Anonymous technical logs that help us identify and fix software errors.</li>
+</ul>
 
-  <h2>8. Children's Privacy</h2>
-  <p>Quix is suitable for all ages. We do not knowingly collect personally identifiable information from children under 13. The anonymous ID assigned by Firebase contains no personal data. If you believe a child has submitted personal information, please contact us and we will remove it promptly.</p>
+<h2>2. AI Quiz Generation</h2>
 
-  <h2>9. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+<p>The app allows users to upload documents (such as PDF, TXT, DOC, or DOCX files) in order to generate quiz questions.</p>
 
-  <h2>10. Contact Us</h2>
-  <p>If you have any questions or requests regarding this Privacy Policy, please contact us:</p>
-  <p><strong>Email:</strong> <a href="mailto:support@quix.app">support@quix.app</a></p>
+<p>When this feature is used, the text content of the document may be processed by secure AI services to generate quiz material. The original document content is not permanently stored on our servers.</p>
 
-  <hr>
-  <p style="font-size: 13px; color: #999; text-align: center;">© 2026 Quix · All rights reserved</p>
+<p>Generated quiz packs are typically saved locally on your device.</p>
+
+<p><strong>Important:</strong> Please avoid uploading documents containing sensitive personal, financial, medical, or confidential information.</p>
+
+<h2>3. Payments and Subscriptions</h2>
+
+<p>Quix may offer optional paid features or subscription services. Payments are processed through secure third-party payment providers.</p>
+
+<p>We do not collect or store your card number, UPI details, banking information, or other payment credentials.</p>
+
+<p>Limited information required to verify purchases, such as subscription status or transaction references, may be stored to enable the service.</p>
+
+<h2>4. Multiplayer Features</h2>
+
+<p>When participating in multiplayer sessions, certain temporary information may be processed to enable gameplay functionality.</p>
+
+<ul>
+<li>Room or session codes</li>
+<li>Player nicknames</li>
+<li>Answers and scores during gameplay</li>
+<li>Session activity status</li>
+</ul>
+
+<p>This information is temporary and is automatically removed after the session ends or within a reasonable operational period.</p>
+
+<h2>5. Third-Party Services</h2>
+
+<p>The app may integrate with trusted third-party service providers to support functionality such as authentication, cloud storage, AI processing, analytics, advertising, and payment processing.</p>
+
+<p>These services may process certain information as required to perform their functions and operate under their own privacy policies.</p>
+
+<h2>6. Data Storage and Security</h2>
+
+<p>Some information necessary for the operation of the app may be stored on secure cloud infrastructure or locally on your device.</p>
+
+<p>We implement reasonable technical and organizational safeguards designed to protect data from unauthorized access, misuse, or disclosure.</p>
+
+<p>Information is retained only for as long as necessary to provide the service or to comply with applicable legal obligations.</p>
+
+<h2>7. Your Rights</h2>
+
+<p>You may request access to or deletion of certain information associated with your use of the app where applicable.</p>
+
+<p>Uninstalling the app removes locally stored data from your device.</p>
+
+<p>If you wish to request deletion of server-side data or have questions regarding your information, you may contact us using the email provided below.</p>
+
+<p>Users may also control certain advertising preferences through their device settings.</p>
+
+<h2>8. Children's Privacy</h2>
+
+<p>Quix is designed for educational and entertainment purposes and may be used by a wide range of users. We do not knowingly collect personally identifiable information from children under the age of 13.</p>
+
+<p>If you believe that a child has provided personal information through the app, please contact us and we will take reasonable steps to remove such information.</p>
+
+<h2>9. Changes to This Policy</h2>
+
+<p>We may update this Privacy Policy from time to time. When updates occur, the revised policy will be posted on this page with an updated revision date.</p>
+
+<p>Continued use of the application after changes are made indicates acceptance of the updated policy.</p>
+
+<h2>10. Contact Us</h2>
+
+<p>If you have any questions about this Privacy Policy or requests regarding your data, please contact us:</p>
+
+<p><strong>Email:</strong> <a href="mailto:reverse454@gmail.com">reverse454@gmail.com</a></p>
+
+<hr>
+
+<p style="font-size:13px;color:#999;text-align:center;">
+© 2026 Quix · All rights reserved
+</p>
 
 </body>
 </html>
