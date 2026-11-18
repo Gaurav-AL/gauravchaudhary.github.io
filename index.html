@@ -1316,6 +1316,7 @@ footer {
         <li><a href="#contact">Contact</a></li>
         <li><a href="learning.html">Learning</a></li>
         <li><a href="privacy-policy.html">QX Privacy Policy</a></li>
+        <li><a id="navResumeBtn" href="Gaurav_Chaudhary_Approved.pdf" download class="nav-cta"><i class="fas fa-download"></i> Resume</a></li>
       </ul>
   </div>
 </nav>
@@ -1484,8 +1485,35 @@ footer {
     </div>
     <div class="exp-timeline">
 
-      <!-- RAZORPAY -->
+      <!-- MERCOR -->
       <div class="exp-item fade-in">
+        <div class="exp-meta">
+          <div class="exp-date">Jan 2026 – Present</div>
+          <div class="exp-company">Mercor</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">
+            Software Engineer (Freelancer)
+            <span class="badge badge-blue">AI · Code Auditing</span>
+            <span class="badge badge-green">Distributed Systems</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>
+              <span><strong>Audited AI-generated backend code, architectures, and technical documentation</strong> for factual correctness, identifying logical flaws, eliminating hallucinations, and improving reliability across complex distributed engineering systems.</span>
+            </li>
+          </ul>
+          <div class="stack-row">
+            <span class="stack-tag">Distributed Systems</span>
+            <span class="stack-tag">Code Review</span>
+            <span class="stack-tag">System Architecture</span>
+            <span class="stack-tag">AI Evaluation</span>
+            <span class="stack-tag">Backend</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RAZORPAY -->
+      <div class="exp-item fade-in" style="transition-delay:0.05s">
         <div class="exp-meta">
           <div class="exp-date">Apr 2025 – Oct 2025</div>
           <div class="exp-company">Razorpay</div>
@@ -1758,31 +1786,97 @@ footer {
       <div class="section-divider"></div>
     </div>
     <div class="projects-grid">
+      <!-- QUIX -->
       <div class="project-card fade-in">
+        <img class="project-thumb" src="quix_feature.png" alt="Quix: AI Quiz Maker & Trivia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="project-thumb-placeholder" style="display:none;">⚡</div>
+        <div class="project-body">
+          <div class="project-title">Quix: AI Quiz Maker & Trivia</div>
+          <p class="project-desc">AI-powered trivia and quiz platform leveraging 6 parallel LLMs with majority-vote validation to maximize question-answer accuracy. Features real-time multiplayer competitions with Firebase RTDB, live leaderboards, FCM, Supabase, Google Play Billing (subscriptions & 19 IAP tokens), and AdMob rewarded ads.</p>
+          <div class="stack-row" style="margin-top:0; margin-bottom:16px;">
+            <span class="stack-tag">Flutter</span>
+            <span class="stack-tag">Dart</span>
+            <span class="stack-tag">Firebase RTDB</span>
+            <span class="stack-tag">Supabase</span>
+            <span class="stack-tag">Google Play Billing</span>
+            <span class="stack-tag">AdMob</span>
+            <span class="stack-tag">LLM Ensemble</span>
+          </div>
+          <div class="project-links-row">
+            <a href="https://github.com/Gaurav-AL/quix" target="_blank" class="project-link"><i class="fab fa-github"></i> View Source</a>
+            <a href="privacy-policy.html" class="project-link"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOBHUNTER -->
+      <div class="project-card fade-in" style="transition-delay:0.1s">
+        <img class="project-thumb" src="jobhunter_banner.jpg" alt="JobHunter — Job Discovery Assistant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="project-thumb-placeholder" style="display:none;">🎯</div>
+        <div class="project-body">
+          <div class="project-title">JobHunter — Automated Job Discovery Platform</div>
+          <p class="project-desc">Full-stack job opening assistant that aggregates live openings from Greenhouse, Lever, and Ashby ATS APIs plus remote feeds (Himalayas, Jobicy). Features profile-driven heuristic match scoring, daily digest emails with tailored drafts, resume parsing, and per-user Excel (.xlsx) tracker export.</p>
+          <div class="stack-row" style="margin-top:0; margin-bottom:16px;">
+            <span class="stack-tag">Go</span>
+            <span class="stack-tag">Vue 3</span>
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">Docker</span>
+            <span class="stack-tag">Firebase Auth</span>
+            <span class="stack-tag">REST APIs</span>
+            <span class="stack-tag">Nginx</span>
+          </div>
+          <div class="project-links-row">
+            <a href="https://github.com/Gaurav-AL/jobHunter" target="_blank" class="project-link"><i class="fab fa-github"></i> View Source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COVID ASIA -->
+      <div class="project-card fade-in" style="transition-delay:0.2s">
         <div class="project-thumb-placeholder">🦠</div>
         <div class="project-body">
           <div class="project-title">Covid Data Extractor — Asia</div>
           <p class="project-desc">Engineered a real-time web scraping pipeline to aggregate and normalize COVID-19 statistics across Asian countries, with structured data output and automated scheduling.</p>
+          <div class="stack-row" style="margin-top:0; margin-bottom:16px;">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">Web Scraping</span>
+            <span class="stack-tag">Automation</span>
+          </div>
           <div class="project-links-row">
             <a href="https://github.com/Gaurav-AL/covid_asia" target="_blank" class="project-link"><i class="fab fa-github"></i> View Source</a>
           </div>
         </div>
       </div>
-      <div class="project-card fade-in" style="transition-delay:0.1s">
+
+      <!-- E-COMMERCE -->
+      <div class="project-card fade-in" style="transition-delay:0.3s">
         <div class="project-thumb-placeholder">🛒</div>
         <div class="project-body">
           <div class="project-title">Full-Stack E-Commerce Platform</div>
           <p class="project-desc">Built a production-grade e-commerce prototype with Angular frontend and Spring Boot backend — featuring product catalog, cart management, order tracking, and JWT auth.</p>
+          <div class="stack-row" style="margin-top:0; margin-bottom:16px;">
+            <span class="stack-tag">Spring Boot</span>
+            <span class="stack-tag">Angular</span>
+            <span class="stack-tag">Java</span>
+            <span class="stack-tag">JWT</span>
+          </div>
           <div class="project-links-row">
             <a href="https://github.com/Gaurav-AL/ecommerceapp" target="_blank" class="project-link"><i class="fab fa-github"></i> View Source</a>
           </div>
         </div>
       </div>
-      <div class="project-card fade-in" style="transition-delay:0.2s">
+
+      <!-- INCOVID19 -->
+      <div class="project-card fade-in" style="transition-delay:0.4s">
         <div class="project-thumb-placeholder">🏠</div>
         <div class="project-body">
           <div class="project-title">inCovid19 Dashboard API</div>
           <p class="project-desc">Designed and implemented the REST API backend for a public health portal, integrating Django with ElasticSearch for fast querying of live COVID-19 semantic data.</p>
+          <div class="stack-row" style="margin-top:0; margin-bottom:16px;">
+            <span class="stack-tag">Django</span>
+            <span class="stack-tag">ElasticSearch</span>
+            <span class="stack-tag">REST API</span>
+          </div>
           <div class="project-links-row">
             <a href="https://github.com/Gaurav-AL/incovid19" target="_blank" class="project-link"><i class="fab fa-github"></i> View Source</a>
           </div>
@@ -1884,8 +1978,8 @@ footer {
         </div>
       <div class="social-row"> 
           <a href="https://www.linkedin.com/in/gaurav6854/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a> 
-          <a href="https://www.linkedin.com/in/gaurav6854/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/Gaurav-AL" target="_blank" class="social-btn"><i class="fab fa-github"></i></a> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gauravchaudhary.hck@gmail.com" target="_blank" class="social-btn"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/Gaurav-AL" target="_blank" class="social-btn"><i class="fab fa-github"></i></a> 
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gauravchaudhary.hck@gmail.com" target="_blank" class="social-btn"><i class="fas fa-envelope"></i></a>
       </div>
       <div class="contact-right fade-in" style="transition-delay:0.15s">
         <div class="ready-badge"><div class="status-dot"></div> Available for Interviews</div>
@@ -1899,7 +1993,7 @@ footer {
           <li>Immediate availability — no notice period</li>
           <li>Comfortable with ambiguity; can ramp up fast on new stacks</li>
         </ul>
-        <a id="contactResumeBtn" href="Gaurav's_Resume_16_26.pdf" download class="btn-primary" style="width:100%; justify-content:center;">
+        <a id="contactResumeBtn" href="Gaurav_Chaudhary_Approved.pdf" download class="btn-primary" style="width:100%; justify-content:center;">
           <i class="fas fa-download"></i> Download Full Resume
         </a>
       </div>
@@ -1912,7 +2006,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <p class="footer-text">© 2025 Gaurav Chaudhary · Built with ❤️ · <a href="https://www.linkedin.com/in/gaurav6854/" target="_blank">LinkedIn</a> · <a href="https://github.com/Gaurav-AL" target="_blank">GitHub</a></p>
+    <p class="footer-text">© 2026 Gaurav Chaudhary · Built with ❤️ · <a href="https://www.linkedin.com/in/gaurav6854/" target="_blank">LinkedIn</a> · <a href="https://github.com/Gaurav-AL" target="_blank">GitHub</a></p>
   </div>
 </footer>
 
